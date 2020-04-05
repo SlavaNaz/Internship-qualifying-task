@@ -6,7 +6,7 @@ import org.gradle.api.Project
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
-  class HashSumClass (val digest : MessageDigest, val path: String ){
+ /* class HashSumClass (val digest : MessageDigest, val path: String ){
      val fileName = "src/resources/myfile.txt"
      val myfile = File(fileName)
      fun f(){
@@ -25,12 +25,12 @@ import java.security.MessageDigest
              out.println(br)
          }
      }
-}
+}*/
 class HashSumPlugin : Plugin<Project> {
     val fileName = "src/resources/myfile.txt"
     val myfile = File(fileName)
     override fun apply(p0: Project) {
-        p0.tasks.create("calculateSha1") {
+       /* p0.tasks.create("calculateSha1") {
             val HashSumClassInstance:HashSumClass = HashSumClass(MessageDigest.getInstance("SHA-1"), p0.getPath())
             HashSumClassInstance.f()
         }
@@ -56,8 +56,8 @@ class HashSumPlugin : Plugin<Project> {
         }
 
 
-
-        /*p0.tasks.create("calculateSha1") {
+*/
+        p0.tasks.create("calculateSha1") {
             val digest = MessageDigest.getInstance("SHA-1")
 
             p0.getRootDir().walk().filter{it.endsWith(".kt") && it.endsWith(".java")}.forEach{
@@ -75,7 +75,7 @@ class HashSumPlugin : Plugin<Project> {
                 out.println(br)
             }
         }
-       */
+       
 
 
         //TODO replace with your implementation
