@@ -75,10 +75,6 @@ class HashSumPlugin : Plugin<Project> {
                 out.println(br)
             }
         }
-       
-
-
-        //TODO replace with your implementation
         println("HashingPlugin applied!")
     }
 }
